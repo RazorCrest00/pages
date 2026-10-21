@@ -16,6 +16,8 @@ concurrency:
 
 jobs:
   create-assignments:
+    # Forks must opt in and configure their bot secrets before syncing assignments.
+    if: github.repository == 'Open-Coding-Society/pages' || vars.ENABLE_ASSIGNMENT_SYNC == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
